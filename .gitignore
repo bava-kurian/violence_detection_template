@@ -15,3 +15,14 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Ignore all video files globally
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+*.webm
+*.mpeg
+*.mpg
