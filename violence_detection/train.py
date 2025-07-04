@@ -10,6 +10,7 @@ import time
 import sys  # Added for better exception handling
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
 transform = transforms.Compose([
     transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
@@ -39,7 +40,7 @@ try:
             inputs, labels = inputs.to(device), labels.to(device).float()
             optimizer.zero_grad()
             outputs = model(inputs)
-            outputs = outputs.squeeze()
+            outputs = outputs.view(-1)  # Ensures shape [batch_size]
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()

@@ -9,3 +9,4 @@ def get_model():
         nn.Sigmoid()
     )
     return model
+
