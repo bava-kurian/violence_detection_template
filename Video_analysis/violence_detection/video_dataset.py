@@ -29,7 +29,7 @@ class VideoDataset(Dataset):
         self.root_dir = root_dir
         self.num_frames = num_frames
         self.transform = transform
-        self.classes = ['non_violent', 'violent']
+        self.classes = ['NonViolence', 'Violence']
         self.data = []
 
         for label, cls in enumerate(self.classes):
@@ -46,3 +46,11 @@ class VideoDataset(Dataset):
         if self.transform:
             frames = torch.stack([self.transform(img) for img in frames])
         return frames.permute(1, 0, 2, 3), torch.tensor(label, dtype=torch.long)
+
+transform = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+])
+
+train_set = VideoDataset('violence_detection/Dataset/train', transform=transform)

@@ -6,8 +6,6 @@ from violence_detection.models.i3d_model import get_model
 import tempfile
 import os
 import numpy as np
-import cv2
-
 st.title("Violence Detection in Video")
 st.write("Upload a video file to detect violence.")
 

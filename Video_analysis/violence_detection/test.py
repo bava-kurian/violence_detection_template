@@ -28,9 +28,9 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
 ])
 
-# Validation dataset and loader (same as train.py)
-val_set = VideoDataset('dataset/val', transform=transform)
-val_loader = DataLoader(val_set, batch_size=4)
+# Test dataset and loader
+test_set = VideoDataset('violence_detection/Dataset/test', transform=transform)
+test_loader = DataLoader(test_set, batch_size=4)
 
 # Model
 model = get_model().to(device)
@@ -43,8 +43,9 @@ total_loss = 0
 correct = 0
 total = 0
 
+print("Starting testing...")
 with torch.no_grad():
-    for inputs, labels in val_loader:
+    for inputs, labels in test_loader:
         inputs, labels = inputs.to(device), labels.to(device).float()
         outputs = model(inputs)
         outputs = outputs.squeeze()
@@ -55,5 +56,5 @@ with torch.no_grad():
         total += labels.numel()
 
 accuracy = 100 * correct / total if total > 0 else 0
-avg_loss = total_loss / len(val_loader) if len(val_loader) > 0 else 0
-print(f"Validation Loss: {avg_loss:.4f}, Accuracy: {accuracy:.2f}%") 
+avg_loss = total_loss / len(test_loader) if len(test_loader) > 0 else 0
+print(f"Test Loss: {avg_loss:.4f}, Accuracy: {accuracy:.2f}%")

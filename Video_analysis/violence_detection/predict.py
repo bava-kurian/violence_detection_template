@@ -8,7 +8,7 @@ import numpy as np
 
 # Default checkpoint and video
 DEFAULT_CHECKPOINT = "model_epoch_10.pth"
-DEFAULT_VIDEO = "C:/Users/bavak/Downloads/violence_detection_template/violence_detection/dataset/val/non_violent/NV_383.mp4"
+DEFAULT_VIDEO = "C:/Users/bavak/Downloads/WhatsApp Video 2025-07-04 at 00.31.28_e84bb606.mp4"
 
 # Accept arguments or use defaults
 if len(sys.argv) == 3:

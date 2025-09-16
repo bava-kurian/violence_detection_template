@@ -16,8 +16,8 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
 ])
 
-train_set = VideoDataset('dataset/train', transform=transform)
-val_set = VideoDataset('dataset/val', transform=transform)
+train_set = VideoDataset('violence_detection/Dataset/train', transform=transform)
+val_set = VideoDataset('violence_detection/Dataset/val', transform=transform)
 
 train_loader = DataLoader(train_set, batch_size=4, shuffle=True)
 val_loader = DataLoader(val_set, batch_size=4)
