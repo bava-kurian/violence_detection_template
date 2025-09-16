@@ -1,0 +1,28 @@
+# Core ML/AI dependencies
+# Use compatible versions for torch, torchvision, safetensors
+# (see: https://github.com/pytorch/pytorch/wiki/PyTorch-Versions)
+torch
+torchvision
+safetensors
+
+# Transformers for video classification pipeline
+transformers
+
+# Video and image processing
+opencv-python
+numpy
+
+# Progress bar
+# (used in training)
+tqdm
+
+# Flask API and utilities
+flask
+flask-cors
+werkzeug
+
+# Streamlit for web app
+streamlit
+
+# If using CUDA, user should install torch with CUDA support as needed
+# pip install torch==2.7.0+cu121 torchvision==0.22.0+cu121 --index-url https://download.pytorch.org/whl/cu121 

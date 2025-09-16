@@ -1,0 +1,29 @@
+# Ignore dataset directory and its contents
+dataset/
+*.csv
+*.tsv
+*.json
+*.zip
+*.tar
+*.tar.gz
+*.h5
+*.npz
+*.npy
+
+# Add other common ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore all video files globally
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+*.webm
+*.mpeg
+*.mpg
+*.pth
